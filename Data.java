@@ -1,4 +1,7 @@
-import java.util.Scanner; 
+import java.util.Scanner;
+import java.util.Date;  
+import java.text.DateFormat;
+import java.time.LocalDate;
 
 public class Data {
 	Scanner read = new Scanner(System.in);
@@ -27,21 +30,33 @@ public class Data {
 		}
 		
 		public void entraAno(int a) {
-			this.dia = a;
+			this.ano = a;
 		}
 		
 		public void entraDia() {
 			int d = read.nextInt();
+			while(d>31 || d<0) {
+				System.out.println("Entrada inválida. Refaça o processo:");
+				d = read.nextInt();
+			}
 			entraDia(d);
 		}
 		
 		public void entraMes() {
 			int m = read.nextInt();
+			while(m>12 || m<0) {
+				System.out.println("Entrada inválida. Refaça o processo:");
+				m = read.nextInt();
+			}
 			entraMes(m);
 		}
 		
 		public void entraAno() {
 			int a = read.nextInt();
+			while(a>9999 || a<0) {
+				System.out.println("Entrada inválida. Refaça o processo:");
+				a = read.nextInt();
+			}
 			entraAno(a);
 		}
 		
@@ -125,5 +140,19 @@ public class Data {
 				
 				return bisxt;
 			}
-
+			
+			public int diasTranscorridos() {
+				int dt = dia;
+				dt += 30 * mes;
+				
+				return dt;
+			}
+				
+			public LocalDate apresentaDataAtual() {
+				LocalDate datual = LocalDate.now();
+				return datual;
+			}
+			
+			
 		}
+
