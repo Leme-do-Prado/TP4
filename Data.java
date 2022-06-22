@@ -1,7 +1,5 @@
-import java.util.Scanner;
-import java.util.Date;  
-import java.text.DateFormat;
-import java.time.LocalDate;
+import java.util.*;
+import java.text.*;
 
 public class Data {
 	Scanner read = new Scanner(System.in);
@@ -148,9 +146,12 @@ public class Data {
 				return dt;
 			}
 				
-			public LocalDate apresentaDataAtual() {
-				LocalDate datual = LocalDate.now();
-				return datual;
+			public static void apresentaDataAtual() {
+				DateFormat DFormat = DateFormat.getDateInstance();
+			 	 
+		        String datual = DFormat.format(new Date());
+		 
+		        System.out.println(datual);
 			}
 			
 			
