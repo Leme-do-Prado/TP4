@@ -15,7 +15,7 @@ public class accessData {
 		System.out.println(morte.mostra2());
 		Data feriado = new Data(16, 6, 2016);
 		System.out.println(feriado.bissexto());
-		System.out.println(feriado.apresentaDataAtual());
+		Data.apresentaDataAtual();
 	}
 
 }
